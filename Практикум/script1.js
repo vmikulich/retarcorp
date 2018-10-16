@@ -38,6 +38,7 @@ const avgMinMax = oper.map(op => {
 const allMinMaxLength = emails.sort((a, b) => a.length - b.length);
 // console.log(`Min operator - ${allMinMaxLength[0]}\nMax operator - ${allMinMaxLength[allMinMaxLength.length - 1]}`);
 
+
 const logins = [];
 emails.forEach(email => {
   let login = email.split('@')[0];
@@ -46,15 +47,36 @@ emails.forEach(email => {
   }
 });
 // console.log(logins);
-let i = 0;
-const letters = logins.map(login => login.split(''))
-                      .forEach(arr => {
-                        arr.map(el => {
-                          return {
-                            name: el,
-                            amount: logins.reduce((p, c) => c.indexOf(el) != -1 ? p + 1 : p, 0)
-                          }
-                        })
-                      })
-console.log(letters);
 
+const loginsStr = logins.join('');
+console.log(loginsStr);
+
+const allLetters = loginsStr.split('');
+
+const letters = [];
+allLetters.forEach(letter => {
+  if(letter.indexOf(letter) != -1 && letters.some(el => el === letter) == 0){
+    letters.push(letter);
+  }
+})
+
+const letts = []; 
+console.log(letters); 
+var count; 
+letters.forEach(letter => { 
+  count = 0; 
+  allLetters.forEach(el => { 
+  if(el == letter){ 
+    count++ 
+  } 
+}) 
+  let ob={ 
+    name: letter, 
+    amount: count 
+  } 
+  letts.push(ob); 
+}) 
+console.log(letts); 
+
+const amountLetters = letts.sort((a, b) => a.amount - b.amount);
+console.log(amountLetters);
