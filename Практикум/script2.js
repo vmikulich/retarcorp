@@ -24,7 +24,7 @@ const arrCsv = csv.split('\n')
                   .map(el => el.trim())
 // console.log(arrCsv);
 
-const arr = arrCsv.map(el => el.split(', '))
+const arr = arrCsv.map(el => el.split(','))
                   .map(el => {
                     return {
                       nameRus: el[0],
@@ -41,7 +41,7 @@ console.log(arr);
 
 const populationDensity = [];
 arr.forEach(el => {
-  let popDen = Math.floor(el.populatuon / el.area);
+  let popDen = Math.round(el.populatuon / el.area);
   populationDensity.push(popDen);
 })
 // console.log(populationDensity);

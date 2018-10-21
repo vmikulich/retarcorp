@@ -1,0 +1,18 @@
+td {
+  border: 2px solid #000;
+  padding: 3px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+.prime {
+  background-color: rgb(255, 70, 70);
+}
+.current {
+  background-color: rgb(41, 102, 13);
+  color: #fff;
+}

@@ -2,7 +2,7 @@ const str = 'vladm1k453@gmail.com, gfgf4343@gmail.com,  +375298254395,  dima342@
 const emails = str.split(', ')
                 .map(el => el.trim())
                 .filter(el => (el.match(/^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$/)) != null);
-//console.log(emails);                
+console.log(emails);                
 
 const operators = [];
 emails.forEach(email => {
@@ -11,7 +11,7 @@ emails.forEach(email => {
     operators.push(operator);
   }
 });
-//console.log(operators);
+console.log(operators);
 
 const oper = operators.map(op => {
   return {
@@ -19,7 +19,7 @@ const oper = operators.map(op => {
     amount: emails.reduce((p, c) => c.indexOf(op) != -1 ? p + 1 : p, 0)
   }
 }).sort((a, b) => a.amount - b.amount);
-//console.log(oper);
+console.log(oper);
 
 const avgMinMax = oper.map(op => {
   const emailsWithOp = emails.filter(email => email.indexOf(op.name) != -1)
@@ -33,10 +33,10 @@ const avgMinMax = oper.map(op => {
     min: emailsWithOp[0]
   }
 });
-// console.log(avgMinMax);
+console.log(avgMinMax);
 
 const allMinMaxLength = emails.sort((a, b) => a.length - b.length);
-// console.log(`Min operator - ${allMinMaxLength[0]}\nMax operator - ${allMinMaxLength[allMinMaxLength.length - 1]}`);
+console.log(`Min operator - ${allMinMaxLength[0]}\nMax operator - ${allMinMaxLength[allMinMaxLength.length - 1]}`);
 
 
 const logins = [];
@@ -46,7 +46,7 @@ emails.forEach(email => {
     logins.push(login);
   }
 });
-// console.log(logins);
+console.log(logins);
 
 const loginsStr = logins.join('');
 console.log(loginsStr);
