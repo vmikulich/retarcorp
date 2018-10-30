@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Currency Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css"/>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><span>EUR to USD - </span></td>
+            <td><span id="EURtoUSD"></span></td>
+        </tr>
+        <tr>
+            <td><span>EUR to BLN - </span></td>
+            <td><span id="EURtoBLN"></span></td>
+        </tr>
+        <tr>
+            <td><span>USD to EUR - </span></td>
+            <td><span id="USDtoEUR"></span></td>
+        </tr>
+        <tr>
+            <td><span>USD to BLN - </span></td>
+            <td><span id="USDtoBLN"></span></td>
+        </tr>
+        <tr>
+            <td><span>BLN to EUR - </span></td>
+            <td><span id="BLNtoEUR"></span></td>
+        </tr>
+        <tr>
+            <td><span>BLN to USD - </span></td>
+            <td><span id="BLNtoUSD"></span></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><input type="number" value="" id="input"/></td>
+            <td>
+                <select id="select1">
+                    <option id="eur1">EUR</option>
+                    <option id="usd1">USD</option>
+                    <option id="bln1">BLN</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><span id="output"></span></td>
+            <td>
+                <select id="select2">
+                    <option id="eur2">EUR</option>
+                    <option id="usd2">USD</option>
+                    <option id="bln2">BLN</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    
+    <script src="script.js"></script>
+</body>
+</html>

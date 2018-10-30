@@ -1,0 +1,24 @@
+.buttons {
+    width: 96px;
+    height: 96px;
+    font-size: 30px;
+    background-color: rgb(192, 59, 209);
+}
+.clearButtons {
+    width: 196px;
+    height: 96px;
+    font-size: 30px;
+    background-color: rgb(192, 59, 209);
+}
+
+body {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+
+h3 {
+    font-size: 50px;
+    margin: right;
+}
+

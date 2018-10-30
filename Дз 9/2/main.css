@@ -1,0 +1,13 @@
+body {
+  height: 2000px;
+  background-color: rgb(218, 211, 211);
+}
+.div {
+  width: 70%;
+  height: 100px;
+  background-color: rgb(160, 23, 23);
+  position: sticky;
+  top: 0;
+  margin: auto;
+  margin-top: 50px;
+}
