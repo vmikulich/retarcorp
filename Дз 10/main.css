@@ -1,0 +1,35 @@
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+tr {
+  /* background="road.png"; */
+  background-image: url(img/road.png);
+  border: 0px solid #000;
+  
+}
+td {
+  
+  border: 0px solid #000;
+  position: relative;
+  padding: 0;
+  height: 30px;
+}
+table {
+  margin: auto;
+  border-collapse: collapse;
+  /* border: 1px solid #000; */
+  width: 500px;
+  overflow: hidden;
+}
+.prime {
+  background-color: rgb(255, 70, 70);
+}
+#car {
+  margin-left: 0;
+}
+#man {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
