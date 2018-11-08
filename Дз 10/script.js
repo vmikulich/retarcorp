@@ -8,7 +8,7 @@ const tds = document.getElementsByTagName('td');
 
 const addCar = cell => {
   const car = document.createElement('img');
-    car.src = "img/car.png";
+    car.src = "img/car1.png";
     car.id = 'car';
     car.className = 'car';
     cell.appendChild(car);
