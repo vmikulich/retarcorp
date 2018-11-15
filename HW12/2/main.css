@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background: #ffffff;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-family: 'Arial', serif;
+}
+nav {
+  width: 100%;
+  background: #118669;
+  display: flex;
+  justify-content: center;
+}
+
+nav > ul > li {
+  list-style: none;
+  display: inline-block;
+  /* margin-right: -4px; */
+  text-align: center;
+  margin: 0 18px;
+}
+li {
+  position: relative;
+  list-style: none;
+  text-align: left;
+}
+
+nav li a {
+  display: block;
+  background: #118669;
+  padding: 15px 40px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s linear;
+  font-size: 17px;
+}
+nav li a:hover {
+  background: #145c4a;
+}
+.submenu {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  width: 130%;
+  z-index: 10;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.title-container {
+  position: relative;
+}
+.title-container img {
+  width: 100%;
+}
+h2 {
+  color: #fff;
+  position: absolute;
+  bottom: 10%;
+  left: 9%;
+  text-shadow: 1px 1px 2px #000;
+}
+section {
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 900px;
+  margin-bottom: 100px;
+}
+section .text-container {
+  margin-top: 15px;
+  font-size: 18px;
+  max-width: 715px;
+  line-height: 1.5;
+}
+.articles-list {
+  text-align: left;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+}
+.articles-list > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.articles-list .article-title-item {
+  margin-left: 10px;
+  max-width: 600px;
+}
+.articles-list .article-title-item > p {
+  margin-top: 5px;
+}
+.articles-list img {
+  max-width: 200px;
+  max-height: 130px;
+}
+.articles-list a{
+  display: block;
+  color: #000;
+  margin-top: 5px;
+}
+.articles-list a:hover {
+  color: #145c4a;
+}
+.views-stars {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.views-stars .views {
+  display: block;
+  height: 30px;
+}
+.views-stars .views span {
+  padding: 0 13px 10px;
+  margin-bottom: 5px;
+  color: rgb(45, 153, 93);
+}
+footer {
+  width: 100%;
+  color: #fff;
+  background-color: #118669;
+  height: 20px;
+}

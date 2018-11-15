@@ -1,0 +1,4 @@
+Беларусь, Belarus, russian, 9000000, 300000, Minsk, +3, 3434
+Россия, Russia, russian, 170000000, 20000000, Moscow, +3, 20000
+Польша, Poland, polish, 10000000, 400000, Warsaw, +2, 5000
+Германия, Germany, deutsch, 20000000, 5000000, Berlin, +2, 100000

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "A fringilla elementum tincidunt parturient parturient mattis senectus dictumst.",
+    "shortContent": "Duis adipiscing condimentum amet vel purus tristique per enim himenaeos penatibus class parturient ullamcorper facilisis consectetur tincidunt ullamcorper a a suspendisse suspendisse eu integer nisl commodo posuere. Dui duis scelerisque massa facilisis egestas a...",
+    "img": "truck1.jpg",
+    "path": "trucks1.json"
+  },
+  {
+    "title": "A fringilla elementum tincidunt parturient parturient mattis senectus dictumst.",
+    "shortContent": "Duis adipiscing condimentum amet vel purus tristique per enim himenaeos penatibus class parturient ullamcorper facilisis consectetur tincidunt ullamcorper a a suspendisse suspendisse eu integer nisl commodo posuere. Dui duis scelerisque massa facilisis egestas a...",
+    "img": "truck1.jpg",
+    "path": "trucks2.json"
+  },
+  {
+    "title": "A fringilla elementum tincidunt parturient parturient mattis senectus dictumst.",
+    "shortContent": "Duis adipiscing condimentum amet vel purus tristique per enim himenaeos penatibus class parturient ullamcorper facilisis consectetur tincidunt ullamcorper a a suspendisse suspendisse eu integer nisl commodo posuere. Dui duis scelerisque massa facilisis egestas a...",
+    "img": "truck1.jpg",
+    "path": "trucks3.json"
+  }
+]
