@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+input, button {
+  outline: none;
+}
+li {
+  list-style: none;
+}
+.inputSpace {
+  top: 0;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  background-color: rgba(0, 0, 0, 0.829);
+  height: 100%;
+}
+.inputSpace > div {
+  padding: 20px 15px 15px;
+  width: 350px;
+  background-color: #fff;
+  border-radius: 6px;
+  position: relative;
+}
+input[type="text"] {
+  margin: 15px 0 0;
+  width: 70%;
+  padding: 10px 5px;
+  font-size: 15px;
+  border: 2px solid #a5a5a5;
+  background: #F6F6f6;
+  border-radius: 8px;
+}
+/* input[type="text"]:focus {
+  border: 2px solid #11940d;
+} */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+input[type="number"]{
+  -moz-appearance: textfield;
+  padding: 10px 5px;
+  font-size: 15px;
+  border: 2px solid #a5a5a5;
+  background: #F6F6f6;
+  border-radius: 8px;
+}
+.input-number-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+.inputSpace .quantity-arrow-minus, .inputSpace .quantity-arrow-plus {
+  width: 50px;
+  margin: 0;
+}
+.inputSpace .quantity-arrow-minus:hover, .inputSpace .quantity-arrow-plus:hover {
+  background-color: rgb(59, 59, 192);
+  color: #fff;
+  border: 2px solid rgb(59, 59, 192);
+}
+.inputSpace button {
+  cursor: pointer;
+  padding: 10px 5px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #fff;
+  background-color: rgb(93, 93, 219);
+  border: 2px solid rgb(93, 93, 219);
+  transition: .2s;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+}
+.inputSpace button:hover {
+  color: rgb(93, 93, 219);
+  background-color: #fff;
+}
+.inputSpace .confirm {
+  color: #fff;
+  background-color: rgb(93, 93, 219);
+  border: 2px solid rgb(93, 93, 219);
+  transition: .2s;
+  width: 49%;
+}
+.inputSpace .confirm:hover {
+  color: rgb(93, 93, 219);
+  background-color: #fff;
+}
+.inputSpace .cancel {
+  color: #fff;
+  background-color: rgb(211, 67, 67);
+  border: 2px solid rgb(211, 67, 67);
+  transition: .2s;
+  width: 49%;
+}
+.inputSpace .cancel:hover {
+  color: rgb(211, 67, 67);
+  background-color: #fff;
+}
+.inputSpace .title {
+  /* font-size: 15px; */
+  font-weight: normal;
+}
+.inputSpace .ok-button {
+  padding: 7px 20px;
+}
+.errorSpace > div {
+  border: 4px solid rgb(190, 36, 36);
+}
+.errorSpace > div > img {
+  display: block;
+  margin: auto;
+}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.inputSpace .option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.inputSpace .option-input:hover {
+  background: #9faab7;
+}
+.inputSpace .option-input:checked {
+  background: rgb(93, 93, 219);
+}
+.inputSpace .option-input:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+.inputSpace .option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: rgb(93, 93, 219);
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.inputSpace .option-input.radio {
+  border-radius: 50%;
+}
+.inputSpace .option-input.radio::after {
+  border-radius: 50%;
+}
+.inputSpace .option-input.checkbox {
+  border-radius: 4px;
+}
+.inputSpace .option-input.checkbox::after {
+  border-radius: 4px;
+}
+.inputSpace .exit-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.inputSpace .exit-container .exit {
+  cursor: pointer;
+  padding: 3px 15px;
+  color: #000;
+  border-radius: 0 4px 0 4px;
+  font-size: 12px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: .3s;
+}
+.inputSpace .exit-container .exit:hover {
+  background-color: rgb(190, 36, 36);
+  color: #fff;
+}
