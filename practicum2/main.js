@@ -1,3 +1,5 @@
+document.head.innerHTML += `<link rel="stylesheet" type="text/css" media="screen" href="main.css" />`;
+
 const Utilits = {
   status: 0,
   closeWindow(inputSpace) {
@@ -7,7 +9,7 @@ const Utilits = {
   createWindow() {
     const inputSpace = document.createElement('div');
       inputSpace.classList.add('inputSpace');
-      inputSpace.innerHTML = `<div></div>`;
+      inputSpace.innerHTML = `<div class="constainer"></div>`;
       inputSpace.firstElementChild.innerHTML = `<div class="exit-container"><div class="exit">&#10006;</div></div>`;
       return inputSpace;
   },
@@ -19,70 +21,117 @@ const Utilits = {
   },
 }
 
+
+const Factory = {
+  inputNumberHtml(title) {
+    const html =  `<h3 class="title">${title}</h3>
+                  <div class="input-number-container">
+                    <button class="quantity-arrow-minus">-</button>
+                    <input class="quantity-num" type="number" value="0">
+                    <button class="quantity-arrow-plus">+</button>
+                  </div>  
+                  <button id="close">Confirm</button>`;
+    return html;              
+  },
+  inputTextHtml(title) {
+    const html = `<h3 class="title">${title}</h3>
+                  <input type="text">
+                  <button>Confirm</button>`;
+    return html;              
+  },
+  confirmationHtml(title) {
+    const html = `<h3 class="title">${title}</h3>
+                  <button value="true" class="confirm">Continue</button>
+                  <button value="false" class="cancel">Cancel</button>`;
+    return html; 
+  },
+  errorHtml(title) {
+    const html = `<img src="img/error.png">
+                  <h3 class="title">${title}</h3>
+                  <button class="ok-button">Ok</button>`;
+    return html; 
+  },
+  informationHtml(title) {
+    const html = `<h3 class="title">${title}</h3>
+                  <button class="ok-button">Ok</button>`;
+    return html; 
+  },
+  chooseOneHtml(title, choices) {
+    
+    const spis = choices.reduce((prev, cur) => 
+                                    prev + `<li>
+                                              <input type="radio" class="option-input radio" name="choise" value="${cur}">${cur}
+                                            </li>`, '');
+    const head = `<h3 class="title">${title}</h3>
+                 <ul>${spis}</ul>`;                                        
+    const button = `<button>Confirm</button>`;
+    const html = `${head}${button}`;       
+    return html;
+  },
+  chooseSeveralHtml(title, choices) {
+    
+    const spis = choices.reduce((prev, cur) => 
+                                    prev + `<li>
+                                              <input type="checkbox" class="option-input checkbox" name="choise" value="${cur}">${cur}
+                                            </li>`, '');
+    const head = `<h3 class="title">${title}</h3>
+                 <ul>${spis}</ul>`;                                        
+    const button = `<button>Confirm</button>`;
+    const html = `${head}${button}`;       
+    return html;
+  },
+}
+
+
+
 const WindowLib = {
-  
   inputNumberWindow(title, func) {
     if (Utilits.status === 0) {
       Utilits.status = 1;
       const inputSpace = Utilits.createWindow();
-      inputSpace.firstElementChild.innerHTML += `<h3 class="title">${title}</h3>
-                                                 <div class="input-number-container">
-                                                    <button class="quantity-arrow-minus">-</button>
-                                                    <input class="quantity-num" type="number" value="0">
-                                                    <button class="quantity-arrow-plus">+</button>
-                                                 </div>  
-                                                 <button>Confirm</button>`;
+      inputSpace.querySelector('.constainer').innerHTML += Factory.inputNumberHtml(title);
       document.body.appendChild(inputSpace);
-      inputSpace.firstElementChild.children[2].firstElementChild.addEventListener('click', Utilits.quantityMinus);
-      inputSpace.firstElementChild.children[2].lastElementChild.addEventListener('click', Utilits.quantityPlus);
-      inputSpace.firstElementChild.firstElementChild.firstElementChild.addEventListener('click', function() {
+      inputSpace.querySelector('.quantity-arrow-minus').addEventListener('click', Utilits.quantityMinus);
+      inputSpace.querySelector('.quantity-arrow-plus').addEventListener('click', Utilits.quantityPlus);
+      inputSpace.querySelector('.exit').addEventListener('click', function() {
         Utilits.closeWindow(inputSpace);
       });
-      inputSpace.firstElementChild.lastElementChild.addEventListener('click', function(e) {
+      inputSpace.querySelector('#close').addEventListener('click', function(e) {
         const input = inputSpace.querySelector('input').value;
         Utilits.closeWindow(inputSpace);
         func(input);
       });
+      // inputSpace.addEventListener('keypress', function(e) {
+      //   console.log(e.keyCode);
+      //   if (e.keyCode === 13) {
+      //     const input = inputSpace.querySelector('input').value;
+      //     Utilits.closeWindow(inputSpace);
+      //     func(input);
+      //   }
+      // });
     }
   },
   inputtextWindow(title, func) {
     if (Utilits.status === 0) {
       Utilits.status = 1;
       const inputSpace = Utilits.createWindow();
-      inputSpace.firstElementChild.innerHTML += `<h3 class="title">${title}</h3>
-                                                  <input type="text">
-                                                  <button>Confirm</button>`;
+      inputSpace.querySelector('.constainer').innerHTML += Factory.inputTextHtml(title);
       document.body.appendChild(inputSpace);
-      inputSpace.firstElementChild.lastElementChild.addEventListener('click', function(e) {
-        const input = inputSpace.firstElementChild.querySelector('input').value;
+      inputSpace.querySelector('button').addEventListener('click', function(e) {
+        const input = inputSpace.querySelector('input').value;
         Utilits.closeWindow(inputSpace);
         func(input);
       });
-      inputSpace.firstElementChild.firstElementChild.firstElementChild.addEventListener('click', function() {
+      inputSpace.querySelector('.exit').addEventListener('click', function() {
         Utilits.closeWindow(inputSpace);
       });
-      // inputSpace.firstElementChild.lastElementChild.addEventListener('keypress', function(e) {
-      //   console.log(e.keyCode);
-      //   if (e.keyCode === 28) {
-      //     const input = inputSpace.firstElementChild.querySelector('input').value;
-      //     document.body.removeChild(inputSpace);
-      //     Utilits.status = 0;
-      //     func(input);
-      //   }
-        
-      // });
     }
   },
   chooseOneWindow(title, choices, func) {
     if (Utilits.status === 0) {
       Utilits.status = 1;
       const inputSpace = Utilits.createWindow();
-      inputSpace.firstElementChild.innerHTML += `<h3 class="title">${title}</h3>
-                                                 <ul></ul>`;
-      inputSpace.firstElementChild.lastElementChild.innerHTML += choices.map(choice => `<li>
-                                                                          <input type="radio" class="option-input radio" name="choise" value="${choice}">${choice}
-                                                                         </li>`).join('');
-      inputSpace.firstElementChild.innerHTML += `<button>Confirm</button>`;
+      inputSpace.querySelector('.constainer').innerHTML += Factory.chooseOneHtml(title, choices);
       document.body.appendChild(inputSpace);
       let yourChoice;
       inputSpace.querySelector('ul').addEventListener('click', function(e) {
@@ -90,10 +139,10 @@ const WindowLib = {
           yourChoice = e.target.getAttribute('value');
         }
       });
-      inputSpace.firstElementChild.firstElementChild.firstElementChild.addEventListener('click', function() {
+      inputSpace.querySelector('.exit').addEventListener('click', function() {
         Utilits.closeWindow(inputSpace);
       });
-      inputSpace.firstElementChild.lastElementChild.addEventListener('click', function(e) {
+      inputSpace.querySelector('button').addEventListener('click', function(e) {
         Utilits.closeWindow(inputSpace);
         func(yourChoice);
       });
@@ -103,16 +152,14 @@ const WindowLib = {
     if (Utilits.status === 0) {
       Utilits.status = 1;
       const inputSpace = Utilits.createWindow();
-      inputSpace.firstElementChild.innerHTML += `<h3 class="title">${title}</h3>
-                                                <button value="true" class="confirm">Continue</button>
-                                                <button value="false" class="cancel">Cancel</button>`;     
+      inputSpace.querySelector('.constainer').innerHTML += Factory.confirmationHtml(title);     
       document.body.appendChild(inputSpace);
       let yourChoice = 0;
-      inputSpace.firstElementChild.firstElementChild.firstElementChild.addEventListener('click', function() {
+      inputSpace.querySelector('.exit').addEventListener('click', function() {
         Utilits.closeWindow(inputSpace);
       });
-      inputSpace.firstElementChild.querySelectorAll('button').forEach(el => {
-        el.addEventListener('click', function(e) {
+      inputSpace.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', function(e) {
           this.value === 'true' ?  yourChoice = true : yourChoice = false;
           Utilits.closeWindow(inputSpace);
           func(yourChoice);
@@ -124,23 +171,19 @@ const WindowLib = {
     if (Utilits.status === 0) {
       Utilits.status = 1;
       const inputSpace = Utilits.createWindow();
-      inputSpace.firstElementChild.innerHTML += `<h3 class="title">${title}</h3>
-                                                 <ul></ul>`;
-      inputSpace.firstElementChild.lastElementChild.innerHTML += choices.map(choice => `<li>
-                                                                            <input type="checkbox" class="option-input checkbox" name="choise" value="${choice}">${choice}
-                                                                         </li>`).join('');
-      inputSpace.firstElementChild.innerHTML += `<button>Confirm</button>`;
+      inputSpace.querySelector('.constainer').innerHTML += Factory.chooseSeveralHtml(title, choices);
       document.body.appendChild(inputSpace);
       const choiceArr = [];
-      inputSpace.querySelector('ul').addEventListener('click', function(e) {
-        if (e.target.nodeName.toLowerCase() === 'input') {
-          e.target.checked && choiceArr.indexOf(e.target.getAttribute('value')) === -1 ? choiceArr.push(e.target.getAttribute('value')) : 0;
-        }
-      });
-      inputSpace.firstElementChild.firstElementChild.firstElementChild.addEventListener('click', function() {
+      const inputs = inputSpace.getElementsByTagName('input');
+      inputSpace.querySelector('.exit').addEventListener('click', function() {
         Utilits.closeWindow(inputSpace);
       });
-      inputSpace.firstElementChild.lastElementChild.addEventListener('click', function(e) {
+      inputSpace.querySelector('button').addEventListener('click', function(e) {
+        Array.from(inputs).forEach(choice => {
+          if (choice.nodeName.toLowerCase() === 'input') {
+            choice.checked && choiceArr.indexOf(choice.getAttribute('value')) === -1 ? choiceArr.push(choice.getAttribute('value')) : 0;
+          }
+        });
         Utilits.closeWindow(inputSpace);
         func(choiceArr);
       });
@@ -151,14 +194,12 @@ const WindowLib = {
       Utilits.status = 1;
       const inputSpace = Utilits.createWindow();
       inputSpace.classList.add('errorSpace');
-      inputSpace.firstElementChild.innerHTML += `<img src="img/error.png">
-                                                 <h3 class="title">${title}</h3>
-                                                 <button class="ok-button">Ok</button>`;
+      inputSpace.querySelector('.constainer').innerHTML += Factory.errorHtml(title);
       document.body.appendChild(inputSpace);
-      inputSpace.firstElementChild.firstElementChild.firstElementChild.addEventListener('click', function() {
+      inputSpace.querySelector('.exit').addEventListener('click', function() {
         Utilits.closeWindow(inputSpace);
       });
-      inputSpace.firstElementChild.lastElementChild.addEventListener('click', function(e) {
+      inputSpace.querySelector('button').addEventListener('click', function(e) {
         Utilits.closeWindow(inputSpace);
         func();
       });
@@ -168,13 +209,12 @@ const WindowLib = {
     if (Utilits.status === 0) {
       Utilits.status = 1;
       const inputSpace = Utilits.createWindow();
-      inputSpace.firstElementChild.innerHTML += `<h3 class="title">${title}</h3>
-                                                 <button class="ok-button">Ok</button>`;
+      inputSpace.querySelector('.constainer').innerHTML += Factory.informationHtml(title);
       document.body.appendChild(inputSpace);
-      inputSpace.firstElementChild.firstElementChild.firstElementChild.addEventListener('click', function() {
+      inputSpace.querySelector('.exit').addEventListener('click', function() {
         Utilits.closeWindow(inputSpace);
       });
-      inputSpace.firstElementChild.lastElementChild.addEventListener('click', function(e) {
+      inputSpace.querySelector('button').addEventListener('click', function(e) {
         Utilits.closeWindow(inputSpace);
         func();
       });
@@ -188,16 +228,16 @@ const f = data => {
 
 const button = document.getElementById('btn');
 
-const arr = ['Biba', 'Boba', 'Hueba'];
+const arr = ['Biba', 'Boba', 'Gogi'];
 
 button.addEventListener('click', function(e){
-  WindowLib.confirmationWindow('Error you stupid shit dog cat parrot', f);
+  WindowLib.confirmationWindow('Please enter a title', f);
 })
 
 const button1 = document.getElementById('btn1');
 
 button1.addEventListener('click', function(e){
-  WindowLib.chooseSeveralWindow('Error you stupid shit girl boy cat dog', arr, f);
+  WindowLib.chooseSeveralWindow('Please enter a title', arr, f);
 })
 
 const button2 = document.getElementById('btn2');
@@ -207,17 +247,17 @@ const button5 = document.getElementById('btn5');
 const button6 = document.getElementById('btn6');
 
 button2.addEventListener('click', function(e){
-  WindowLib.informationWindow('Error you stupid shit girl boy cat dog', f);
+  WindowLib.informationWindow('Please enter a title', f);
 })
 button3.addEventListener('click', function(e){
-  WindowLib.errorWindow('Error you stupid shit girl boy cat dog', f);
+  WindowLib.errorWindow('Please enter a title', f);
 })
 button4.addEventListener('click', function(e){
-  WindowLib.chooseOneWindow('Error you stupid shit girl boy cat dog', arr, f);
+  WindowLib.chooseOneWindow('Please enter a title', arr, f);
 })
 button5.addEventListener('click', function(e){
-  WindowLib.inputtextWindow('Error you stupid shit girl boy cat dog', f);
+  WindowLib.inputtextWindow('Please enter a title', f);
 })
 button6.addEventListener('click', function(e){
-  WindowLib.inputNumberWindow('Error you stupid shit girl boy cat dog', f);
+  WindowLib.inputNumberWindow('Please enter a title', f);
 })
