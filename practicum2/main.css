@@ -64,7 +64,7 @@ input[type="number"]{
   width: 50px;
   margin: 0;
 }
-.inputSpace .quantity-arrow-minus:hover, .inputSpace .quantity-arrow-plus:hover {
+.inputSpace .quantity-arrow-minus:active, .inputSpace .quantity-arrow-plus:active {
   background-color: rgb(59, 59, 192);
   color: #fff;
   border: 2px solid rgb(59, 59, 192);

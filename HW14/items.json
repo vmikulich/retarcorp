@@ -1,0 +1,46 @@
+[{
+  "title": "Стул", 
+  "price": "800", 
+  "img": "./img/chair.jpg", 
+  "category": "Furniture"
+}, {
+  "title": "Стол", 
+  "price": "900", 
+  "img": "./img/table.jpg", 
+  "category": "Furniture"
+}, {
+  "title": "Шкаф", 
+  "price": "950", 
+  "img": "./img/cupboard.jpg", 
+  "category": "Furniture"
+}, {
+  "title": "Audi A8", 
+  "price": "120", 
+  "img": "./img/a8.jpg", 
+  "category": "Cars"
+}, {
+  "title": "Bugatti Veyron", 
+  "price": "70", 
+  "img": "./img/r8.jpg", 
+  "category": "Cars"
+}, {
+  "title": "Audi R8", 
+  "price": "100", 
+  "img": "./img/veyron.jpg", 
+  "category": "Cars"
+}, {
+  "title": "AK-47", 
+  "price": "154", 
+  "img": "./img/ak47.jpg", 
+  "category": "Guns"
+}, {
+  "title": "M16", 
+  "price": "112", 
+  "img": "./img/m16.jpg", 
+  "category": "Guns"
+}, {
+  "title": "TT", 
+  "price": "187", 
+  "img": "./img/tt.jpg", 
+  "category": "Guns"
+}]
