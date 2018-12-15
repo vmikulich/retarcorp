@@ -1,0 +1,22 @@
+main {
+  width: 1000px;
+  margin: 20px auto;
+}
+  canvas {
+    border: 2px solid #000;
+  }
+
+  #colorPicker {
+    margin: 10px;
+    width: 50px;
+    height: 30px;
+  }
+  #lineWidth {
+    margin: 10px;
+    margin-left: 3px;
+    font-size: 20px;
+    width: 50px;
+  }
+  label {
+    font-size: 18px;
+  }
