@@ -1,8 +1,8 @@
 Vue.component('app-countries', {
   template: `
-      <li class="app-country">
-          <a class="country-title" href="item.path" @click="loadChains">{{ item.country }}</a>
-      </li>
+    <li class="app-country">
+      <a class="country-title" href="item.path" @click="loadChains">{{ item.country }}</a>
+    </li>
   `,
   props: ['item'],
   methods: {
@@ -15,9 +15,9 @@ Vue.component('app-countries', {
 
 Vue.component('app-chains', {
   template: `
-      <li class="app-chain">
-          <a class="chain-title" href="item.stores" @click="loadShops">{{ item.company }}</a>
-      </li>
+    <li class="app-chain">
+      <a class="chain-title" href="item.stores" @click="loadShops">{{ item.company }}</a>
+    </li>
   `,
   props: ['item'],
   methods: {
@@ -30,8 +30,9 @@ Vue.component('app-chains', {
 
 Vue.component('app-stores', {
   template: `
-     <li class="app-chain">
+    <li class="app-chain">
       <a class="store-title" href="item.employees" @click="loadEmployees">{{ item.store }}</a>
+      <button>Show info</button>
     </li>
   `,
   props: ['item'],
@@ -46,13 +47,15 @@ Vue.component('app-stores', {
 Vue.component('app-employees', {
   template: `
     <div class="empl-container">
-      <p>{{ item.position }}</p>
-      <p>{{ item.Name }}</p>
-      <p>{{ item.salary }}</p>
-    </div>    
+      <p>Positoin: <span>{{ item.position }}</span></p>
+      <p>Name: <span>{{ item.Name }}</span></p>
+      <p>Salary: <span>{{ item.salary }}</span></p>
+    </div>
   `,
   props: ['item'],
 })
+
+
 
 new Vue({
   el: '#app',
