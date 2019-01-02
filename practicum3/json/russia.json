@@ -1,0 +1,10 @@
+[
+    {
+        "company": "Gazprom",
+        "stores": "gazprom.json"
+    },
+    {
+        "company": "Lukoil",
+        "stores": "lukoil.json"
+    }
+]

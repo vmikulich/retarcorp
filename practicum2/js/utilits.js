@@ -1,8 +1,8 @@
 const Utilits = {
   status: 0,
   closeWindow(inputSpace) {
-        document.body.removeChild(inputSpace);
-        Utilits.status = 0;
+    document.body.removeChild(inputSpace);
+    Utilits.status = 0;
   },
   createWindow() {
     const inputSpace = document.createElement('div');
@@ -17,6 +17,12 @@ const Utilits = {
   quantityPlus() {
     this.previousElementSibling.value++;
   },
+  moveToTopWindow(element) {
+    element.style.top = '0';
+  },
+  moveTobottomWindow(element) {
+    element.style.top = '100%';
+  }
 }
 
 export default Utilits;

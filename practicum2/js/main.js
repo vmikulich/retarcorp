@@ -10,24 +10,19 @@ const WindowLib = {
       const inputSpace = Utilits.createWindow();
       inputSpace.querySelector('.constainer').innerHTML += Factory.inputNumberHtml(title);
       document.body.appendChild(inputSpace);
+      setTimeout(Utilits.moveToTopWindow, 100, inputSpace);
       inputSpace.querySelector('.quantity-arrow-minus').addEventListener('click', Utilits.quantityMinus);
       inputSpace.querySelector('.quantity-arrow-plus').addEventListener('click', Utilits.quantityPlus);
       inputSpace.querySelector('.exit').addEventListener('click', function() {
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
       });
       inputSpace.querySelector('#close').addEventListener('click', function(e) {
         const input = inputSpace.querySelector('input').value;
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
         func(input);
       });
-      // document.addEventListener('keypress', function(e) {
-      //   console.log(e.keyCode);
-      //   if (e.keyCode === 13) {
-      //     const input = inputSpace.querySelector('input').value;
-      //     Utilits.closeWindow(inputSpace);
-      //     func(input);
-      //   }
-      // });
     }
   },
   inputtextWindow(title, func) {
@@ -36,13 +31,16 @@ const WindowLib = {
       const inputSpace = Utilits.createWindow();
       inputSpace.querySelector('.constainer').innerHTML += Factory.inputTextHtml(title);
       document.body.appendChild(inputSpace);
+      setTimeout(Utilits.moveToTopWindow, 100, inputSpace);
       inputSpace.querySelector('button').addEventListener('click', function(e) {
         const input = inputSpace.querySelector('input').value;
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
         func(input);
       });
       inputSpace.querySelector('.exit').addEventListener('click', function() {
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
       });
     }
   },
@@ -52,6 +50,7 @@ const WindowLib = {
       const inputSpace = Utilits.createWindow();
       inputSpace.querySelector('.constainer').innerHTML += Factory.chooseOneHtml(title, choices);
       document.body.appendChild(inputSpace);
+      setTimeout(Utilits.moveToTopWindow, 100, inputSpace);
       let yourChoice;
       inputSpace.querySelector('ul').addEventListener('click', function(e) {
         if (e.target.nodeName.toLowerCase() === 'input') {
@@ -59,10 +58,12 @@ const WindowLib = {
         }
       });
       inputSpace.querySelector('.exit').addEventListener('click', function() {
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
       });
       inputSpace.querySelector('button').addEventListener('click', function(e) {
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
         func(yourChoice);
       });
     }
@@ -73,14 +74,17 @@ const WindowLib = {
       const inputSpace = Utilits.createWindow();
       inputSpace.querySelector('.constainer').innerHTML += Factory.confirmationHtml(title);     
       document.body.appendChild(inputSpace);
+      setTimeout(Utilits.moveToTopWindow, 100, inputSpace);
       let yourChoice = 0;
       inputSpace.querySelector('.exit').addEventListener('click', function() {
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
       });
       inputSpace.querySelectorAll('button').forEach(button => {
         button.addEventListener('click', function(e) {
           this.value === 'true' ?  yourChoice = true : yourChoice = false;
-          Utilits.closeWindow(inputSpace);
+          Utilits.moveTobottomWindow(inputSpace);
+          setTimeout(Utilits.closeWindow, 400, inputSpace);
           func(yourChoice);
         });
       });
@@ -92,10 +96,12 @@ const WindowLib = {
       const inputSpace = Utilits.createWindow();
       inputSpace.querySelector('.constainer').innerHTML += Factory.chooseSeveralHtml(title, choices);
       document.body.appendChild(inputSpace);
+      setTimeout(Utilits.moveToTopWindow, 100, inputSpace);
       const choiceArr = [];
       const inputs = inputSpace.getElementsByTagName('input');
       inputSpace.querySelector('.exit').addEventListener('click', function() {
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
       });
       inputSpace.querySelector('button').addEventListener('click', function(e) {
         Array.from(inputs).forEach(choice => {
@@ -103,7 +109,8 @@ const WindowLib = {
             choice.checked && choiceArr.indexOf(choice.getAttribute('value')) === -1 ? choiceArr.push(choice.getAttribute('value')) : 0;
           }
         });
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
         func(choiceArr);
       });
     } 
@@ -115,11 +122,14 @@ const WindowLib = {
       inputSpace.classList.add('errorSpace');
       inputSpace.querySelector('.constainer').innerHTML += Factory.errorHtml(title);
       document.body.appendChild(inputSpace);
+      setTimeout(Utilits.moveToTopWindow, 100, inputSpace);
       inputSpace.querySelector('.exit').addEventListener('click', function() {
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
       });
       inputSpace.querySelector('button').addEventListener('click', function(e) {
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
         func();
       });
     }
@@ -130,11 +140,14 @@ const WindowLib = {
       const inputSpace = Utilits.createWindow();
       inputSpace.querySelector('.constainer').innerHTML += Factory.informationHtml(title);
       document.body.appendChild(inputSpace);
+      setTimeout(Utilits.moveToTopWindow, 100, inputSpace);
       inputSpace.querySelector('.exit').addEventListener('click', function() {
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
       });
       inputSpace.querySelector('button').addEventListener('click', function(e) {
-        Utilits.closeWindow(inputSpace);
+        Utilits.moveTobottomWindow(inputSpace);
+        setTimeout(Utilits.closeWindow, 400, inputSpace);
         func();
       });
     }

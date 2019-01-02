@@ -1,0 +1,12 @@
+[
+    {
+        "position": "director",
+        "Name": "Pasha",
+        "salary": "999"
+    },
+    {
+        "position": "seller",
+        "Name": "Julia",
+        "salary": "600"
+    }
+]

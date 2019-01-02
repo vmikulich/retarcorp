@@ -1,0 +1,10 @@
+[
+    {
+        "store": "BelAZ 1",
+        "employees": "belazEmp1.json"
+    },
+    {
+        "store": "BelAZ 2",
+        "employees": "belazEmp2.json"
+    }
+]

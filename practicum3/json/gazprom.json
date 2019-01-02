@@ -1,0 +1,10 @@
+[
+    {
+        "store": "Gazprom 1",
+        "employees": "gazpromEmp1.json"
+    },
+    {
+        "store": "Gazprom 2",
+        "employees": "gazpromEmp2.json"
+    }
+]

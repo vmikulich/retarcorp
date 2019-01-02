@@ -1,0 +1,10 @@
+[
+    {
+        "country": "Belarus",
+        "path": "belarus.json" 
+    },
+    {
+        "country": "Russia",
+        "path": "russia.json"  
+    }
+]

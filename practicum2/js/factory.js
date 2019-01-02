@@ -33,7 +33,6 @@ const Factory = {
     return html; 
   },
   chooseOneHtml(title, choices) {
-    
     const spis = choices.reduce((prev, cur) => 
                                     prev + `<li>
                                               <input type="radio" class="option-input radio" name="choise" value="${cur}">${cur}
@@ -45,7 +44,6 @@ const Factory = {
     return html;
   },
   chooseSeveralHtml(title, choices) {
-    
     const spis = choices.reduce((prev, cur) => 
                                     prev + `<li>
                                               <input type="checkbox" class="option-input checkbox" name="choise" value="${cur}">${cur}
