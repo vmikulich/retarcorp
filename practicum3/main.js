@@ -1,8 +1,8 @@
 Vue.component('app-countries', {
   template: `
-    <li class="app-country">
+    <div class="app-country">
       <a class="country-title" href="item.path" @click="loadChains">{{ item.country }}</a>
-    </li>
+    </div>
   `,
   props: ['item'],
   methods: {

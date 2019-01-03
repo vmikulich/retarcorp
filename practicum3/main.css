@@ -6,8 +6,52 @@ td, th {
   border: 1px solid #000;
 }
 a {
+  display: block;
   text-decoration: none;
 }
 li {
   list-style: none;
+  border: 1px solid #000;
+}
+#app {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.countries-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.countries-container li{
+  display: inline-block;
+
+}
+.country-title {
+  padding: 7px 10px;
+  color: #000;
+  font-size: 20px;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.employees-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.chains-container, .stores-container {
+  width: 40%;
+  box-sizing: border-box;
+}
+.stores-container {
+
 }

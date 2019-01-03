@@ -13,19 +13,19 @@
 <body>
   <div id="app">
     <div class="countries-container">
-      <ul>
-        <app-countries v-for="count in countries" :item="count" @country-click="loadChains"></app-countries>
-      </ul>
+      <app-countries v-for="count in countries" :item="count" @country-click="loadChains"></app-countries>
     </div>
-    <div class="chains-container">
-      <ul>
-        <app-chains v-for="chain in chains" :item="chain" @chain-click="loadShops"></app-chains>
-      </ul>
-    </div>
-    <div class="stores-container">
-      <ul>
-        <app-stores v-for="store in stores" :item="store"  @employe-click="loadEmployees"></app-stores>
-      </ul>
+    <div class="container">
+      <div class="chains-container">
+        <ul>
+          <app-chains v-for="chain in chains" :item="chain" @chain-click="loadShops"></app-chains>
+        </ul>
+      </div>
+      <div class="stores-container">
+        <ul>
+          <app-stores v-for="store in stores" :item="store"  @employe-click="loadEmployees"></app-stores>
+        </ul>
+      </div>
     </div>
     <div class="employees-container">
       <app-employees v-for="empl in employees" :item="empl"></app-employees>
