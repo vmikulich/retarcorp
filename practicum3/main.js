@@ -30,7 +30,7 @@ Vue.component('app-chains', {
 
 Vue.component('app-stores', {
   template: `
-    <li class="app-chain">
+    <li class="app-store clearfix">
       <a class="store-title" href="item.employees" @click="loadEmployees">{{ item.store }}</a>
       <button>Show info</button>
     </li>
